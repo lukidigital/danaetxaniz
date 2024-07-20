@@ -103,7 +103,7 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 60,
+    "uniqCompNum": 68,
     "versionPublish": "5.9.13",
     "screenshot": "screenshot.png"
   },
@@ -867,6 +867,108 @@
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
             "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "cursor": "pointer"
+            },
+            "& when not (@spacing)": {
+              ".grid-container": {
+                "grid-row-gap": "0"
+              },
+              ".grid-container-1, .grid-container-2": {
+                "gap": "0"
+              }
+            },
+            "& when (@spacing)": {
+              ".grid-container": {
+                "grid-row-gap": "2rem",
+                "@media (max-width: 767px)": {
+                  "grid-row-gap": "1rem"
+                }
+              },
+              ".grid-container-1, .grid-container-2": {
+                "gap": "0 2rem",
+                "@media (max-width: 767px)": {
+                  "gap": "0 1rem"
+                }
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#d70081"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".container, .container-fluid": {
+              "overflow": "hidden"
+            },
+            ".grid-container": {
+              "display": "grid",
+              "transform": "translate3d(-2rem, 0, 0)",
+              "width": "115vw",
+              "grid-column-gap": "1rem"
+            },
+            ".grid-item": {
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center"
+            },
+            ".grid-item img": {
+              "@media (max-width: 767px)": {
+                "min-width": "25vw"
+              },
+              "min-width": "20vw",
+              "max-width": "100%",
+              "max-height": "100%",
+              "object-fit": "cover"
+            },
+            ".grid-container-1, .grid-container-2": {
+              "display": "grid",
+              "grid-template-columns": "repeat(5, 1fr)",
+              "grid-auto-columns": "1fr",
+              "grid-auto-flow": "column"
+            },
+            ".grid-container-1": {
+              "align-items": "flex-end"
+            },
+            ".grid-container-2": {
+              "align-items": "flex-start"
+            }
+          },
+          "_name": "gallery04",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery4\" group=\"Gallery\" plugins=\"scrollGallery\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n    \n    <header>Show/Hide</header>\n    <input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n    <input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n    <header>Cards</header>\n    <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n    <header>Background</header>\n    <fieldset type=\"background\" parallax name=\"bg\" required>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n  <div class=\"container-fluid gallery-wrapper\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-head\">\n        <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n          <h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            <b>Outfits para el día a día</b></h4>\n          <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            Looks en los que inspirarte</h5>\n        </div>\n      </div>\n    </div>\n    <div class=\"grid-container\">\n      <div class=\"grid-container-1\" style=\"transform: translate3d(-160px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/295dbecc-574a-4bd2-a8ac-b2914e1f714b-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/32382379-206215076660153-6644117164833898496-n-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/44789810-2257246970955023-5587301407388697528-n.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n      <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/60644887-140803083754045-3597518227772889428-n.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/239034401-596678471486775-1616811937096368629-n-1.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n        </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "uj5vl0WzzY",
+          "_anchor": "gallery04-1k",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
             "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
@@ -985,7 +1087,7 @@
           },
           "_name": "features030",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features030\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"range\" name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <header>Card</header>\n        <input type=\"color\" title=\"Card BG\" name=\"cardbg\" value=\"#ffffff\" selected>\n        <input type=\"color\" title=\"Card Color\" name=\"cardbg\" value=\"#edefeb\" selected>\n        <input type=\"color\" title=\"Icon Color\" name=\"iconColor\" value=\"#d70081\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\" mbr-if=\"showTitle || showText\">\n            <div class=\"col-md-12 content-head mb-5\">\n                <h1 class=\"mbr-section-title mbr-fonts-style  mb-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">Cómo funciona la asesoría</h1>\n                <p class=\"mbr-subtitle mbr-fonts-style mt-4 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-subtitle\">El servicio habitual es mixto online y con una visita en tu casa, pero podríamos realizarlo completamente online.</p>\n            </div>\n        </div>\n        <div class=\"row justify-content-center  blockContent\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"item-wrapper align-left\">\n                    <div class=\"mbr-text counter-container mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>\n                        <ol>\n                            <li><b>Valoración inicial online. </b>Concertamos una video llamada para conocer tus objetivos, inquietudes, tu estilo actual y las motivaciones del cambio. Así como tus tiendas habituales y tu presupuesto.</li>\n                            <li><b>Visita en tu casa. </b>Es el momento de realizar el estudio de color, el análisis morfológico y de fondo de armario.</li>\n                            <li><b>Personal shopping y composición de outfits. </b>Te entrego un documento con el resultado de la asesoría que recoge listado de prendas en tiendas online y cinco outfits base para que tengas la primera base de cómo combinarlos.</li>\n                        </ol>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}}\">\n                <div class=\"image-wrapper mb-4\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/daaniella26-1603986226-2430735107701488000.jpg\" alt=\"Mobirise Website Builder\">\n                </div>\n            </div>\n\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features030\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"range\" name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <header>Card</header>\n        <input type=\"color\" title=\"Card BG\" name=\"cardbg\" value=\"#ffffff\" selected>\n        <input type=\"color\" title=\"Card Color\" name=\"cardbg\" value=\"#ffffff\" selected>\n        <input type=\"color\" title=\"Icon Color\" name=\"iconColor\" value=\"#d70081\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\" mbr-if=\"showTitle || showText\">\n            <div class=\"col-md-12 content-head mb-5\">\n                <h1 class=\"mbr-section-title mbr-fonts-style  mb-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">Cómo funciona la asesoría</h1>\n                <p class=\"mbr-subtitle mbr-fonts-style mt-4 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-subtitle\">El servicio habitual es mixto online y con una visita en tu casa, pero podríamos realizarlo completamente online.</p>\n            </div>\n        </div>\n        <div class=\"row justify-content-center  blockContent\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"item-wrapper align-left\">\n                    <div class=\"mbr-text counter-container mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>\n                        <ol>\n                            <li><b>Valoración inicial online. </b>Concertamos una video llamada para conocer tus objetivos, inquietudes, tu estilo actual y las motivaciones del cambio. Así como tus tiendas habituales y tu presupuesto.</li>\n                            <li><b>Visita en tu casa. </b>Es el momento de realizar el estudio de color, el análisis morfológico y de fondo de armario.</li>\n                            <li><b>Personal shopping y composición de outfits. </b>Te entrego un documento con el resultado de la asesoría que recoge listado de prendas en tiendas online y cinco outfits base para que tengas la primera base de cómo combinarlos.</li>\n                        </ol>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}}\">\n                <div class=\"image-wrapper mb-4\">\n                    <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/daaniella26-1603986226-2430735107701488000.jpg\" alt=\"Mobirise Website Builder\">\n                </div>\n            </div>\n\n        </div>\n    </div>\n</section>",
           "_cid": "uiv2BkwBx6",
           "_anchor": "features030-s",
           "_PHPplaceholders": [],
@@ -1070,6 +1172,192 @@
           "_params": {}
         },
         {
+          "_name": "slider2",
+          "_sourceTheme": "parkm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"slider2 mbr-embla\" group=\"Sliders &amp; Galleries\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\" plugins=\"embla\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\" checked=\"\">\n        <input inline=\"\" type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <input inline=\"\" type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Subitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <header>Carousel</header>\n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\">\n        <input type=\"range\" title=\"Interval\" name=\"interval\" min=\"1\" max=\"10\" value=\"5\" step=\"1\" condition=\"autoplay\">\n        <input type=\"checkbox\" title=\"Loop\" name=\"loop\" checked=\"\">\n        <input type=\"checkbox\" title=\"Draggable\" name=\"draggable\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrows\" title=\"Arrows\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrowsMobile\" title=\"Mobile Arrows\" condition=\"arrows\" checked=\"\">\n        <input type=\"color\" title=\"Color\" name=\"arrowColor\" value=\"#ffffff\" condition=\"arrows\" selected=\"\">\n        <header>Card</header>\n        <input type=\"range\" name=\"gap\" title=\"Gap\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/parkm5/components/_images/background6.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked=\"\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"position-relative text-center\" video-to-image-on-mobile=\"{{videoToImageOnMobile}}\">\n        <div class=\"col-12\" mbr-if=\"showTitle || showSubtitle\">\n            <h3 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n                <b>CREATIVE ATTRACTION</b>\n            </h3>\n            <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                <b>Inspiración</b></h2>\n            <div class=\"mbr-text mbr-fonts-style counter-container\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\" data-multiline=\"\" mbr-article=\"\">\n                <ul>\n                    <li>Amazing</li>\n                    <li>Unusual</li>\n                    <li>Stunning</li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"embla\" data-loop=\"{{loop}}\" data-auto-play=\"{{autoplay}}\" data-auto-play-interval=\"{{interval}}\" data-draggable=\"{{draggable}}\" data-skip-snaps=\"true\" data-align=\"center\" data-contain-scroll=\"trimSnaps\">\n            <div class=\"embla__viewport\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n                <div class=\"embla__container\">\n                    <div class=\"embla__slide slider-image item active\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/295dbecc-574a-4bd2-a8ac-b2914e1f714b-1.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/275387019-1302733250228373-1540231738165344018-n-1.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"1\" data-bs-slide-to=\"1\">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1671624533-2998126347150716400.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"2\" data-bs-slide-to=\"2\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1533431286-1838877367260706300.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"3\" data-bs-slide-to=\"3\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1604072348-2431457548312589000.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"4\" data-bs-slide-to=\"4\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1671624533-2998126347352100000.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"5\" data-bs-slide-to=\"5\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1604330337-2433621713294841000.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"6\" data-slide-to=\"6\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/44789810-2257246970955023-5587301407388697528-n.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"7\" data-slide-to=\"7\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1603986226-2430735107701488000.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"8\" data-slide-to=\"8\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/32382379-206215076660153-6644117164833898496-n-1.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"9\" data-bs-slide-to=\"9\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1577286684-2206763109742348249-1258335113.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"10\" data-bs-slide-to=\"10\">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1665390798-2945833990963644400.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"11\" data-bs-slide-to=\"11\">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1571065333-2154574640996085523-1258335113.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"14\" data-slide-to=\"14\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1565162160-2105055232397337600.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"15\" data-slide-to=\"15\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1633635069.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"16\" data-slide-to=\"16\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/289455060-445685637372384-2870034002350956856-n.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"17\" data-slide-to=\"17\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1557852473-2043737136773198800.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"18\" data-slide-to=\"18\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1563281498.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"19\" data-slide-to=\"19\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/60644887-140803083754045-3597518227772889428-n-1.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"20\" data-slide-to=\"20\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/64322679-2173970256233427-8630054698621043088-n.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"21\" data-slide-to=\"21\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1560175018-2063220054042054400.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"22\" data-slide-to=\"22\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1569868862-2144537913686468000.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"23\" data-slide-to=\"23\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1581625491.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"24\" data-slide-to=\"24\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1583925793.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"25\" data-slide-to=\"25\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1584100431.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"26\" data-slide-to=\"26\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1594055434-2347429586324624000.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"27\" data-slide-to=\"27\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1603279759.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"28\" data-slide-to=\"28\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1530263761-1812306241797934300.jpg\" alt=\"Mobirise Website Builder\" data-bs-slide-to=\"29\" data-slide-to=\"29\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1630510204-2653234353515708000.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"30\" data-bs-slide-to=\"30\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1565695282-2109527382940527000.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"29\" data-bs-slide-to=\"30\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/239034401-596678471486775-1616811937096368629-n-1.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"30\" data-bs-slide-to=\"31\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1529602330-1806757762543616500.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"31\" data-bs-slide-to=\"31\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1525267569.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"32\" data-bs-slide-to=\"32\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1623352381-2593190186596694500.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"33\" data-bs-slide-to=\"33\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1604784704.jpeg\" alt=\"Mobirise Website Builder\" data-slide-to=\"34\" data-bs-slide-to=\"34\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1563281498-2089279097323656200.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"35\" data-bs-slide-to=\"35\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1604330337-2433621713278026000.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"36\" data-bs-slide-to=\"36\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1700070123-3236745253891417600.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"37\" data-bs-slide-to=\"37\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1627909038-2631414193058240000.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"38\" data-bs-slide-to=\"38\">\n                                </div>\n                            </div>\n                        </div>\n                    </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                        <div class=\"card-wrap\">\n                            <div class=\"item-wrapper position-relative\">\n                                <div class=\"image-wrap\">\n                                    <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1560175018-2063220054042054400.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"39\" data-bs-slide-to=\"39\">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <button class=\"embla__button embla__button--prev\">\n                <span class=\"mobi-mbri mobi-mbri-left mbr-iconfont\" aria-hidden=\"true\"></span>\n                <span class=\"sr-only visually-hidden visually-hidden\">Previous</span>\n            </button>\n            <button class=\"embla__button embla__button--next\">\n                <span class=\"mobi-mbri mobi-mbri-right mbr-iconfont\" aria-hidden=\"true\"></span>\n                <span class=\"sr-only visually-hidden visually-hidden\">Next</span>\n            </button>\n        </div>\n    </div>\n</section>",
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-head": {
+              "padding": "0 1rem"
+            },
+            ".team-card": {
+              "margin-bottom": "2rem",
+              "transition": "all 0.3s",
+              "&:hover": {
+                "transform": "translateY(-10px)"
+              }
+            },
+            ".card-wrap": {
+              "border-radius": "4px",
+              "@media (max-width: 991px)": {
+                "margin-bottom": "2rem"
+              },
+              ".image-wrap img": {
+                "width": "100%"
+              },
+              ".content-wrap": {
+                "@media (min-width: 768px)": {
+                  "padding": "2rem"
+                },
+                "@media (max-width: 767px)": {
+                  "padding": "1rem"
+                }
+              }
+            },
+            ".embla__slide": {
+              "display": "flex",
+              "justify-content": "center",
+              "position": "relative",
+              "min-width": "50%",
+              "max-width": "40%",
+              "@media (max-width: 768px)": {
+                "min-width": "70%",
+                "max-width": "initial",
+                "margin-left": "5px !important",
+                "margin-right": "5px !important"
+              }
+            },
+            ".embla__button--next, .embla__button--prev": {
+              "display": "flex"
+            },
+            ".embla__button": {
+              "top": "-13%",
+              "width": "68px",
+              "height": "68px",
+              "margin-top": "-1.5rem",
+              "font-size": "28px",
+              "background-color": "transparent",
+              "color": "@arrowColor",
+              "border": "2px solid @arrowColor",
+              "border-radius": "50%",
+              "transition": "all 0.3s",
+              "position": "absolute",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "& when not (@arrows)": {
+                "display": "none"
+              },
+              "& when not (@arrowsMobile)": {
+                "@media (max-width: 768px)": {
+                  "display": "none"
+                }
+              },
+              "&:disabled": {
+                "cursor": "default",
+                "display": "none"
+              },
+              "&:hover": {
+                "background": "transparent",
+                "opacity": "1"
+              },
+              "&.embla__button--prev": {
+                "left": "0",
+                "margin-left": "2.5rem"
+              },
+              "&.embla__button--next": {
+                "right": "0",
+                "margin-right": "2.5rem"
+              },
+              "@media (max-width: 992px)": {
+                "top": "-10%"
+              }
+            },
+            ".embla": {
+              "position": "relative",
+              "width": "100%",
+              "margin-top": "52px",
+              "z-index": "1",
+              "@media (max-width: 992px)": {
+                "margin-top": "80px"
+              }
+            },
+            ".embla__viewport": {
+              "overflow": "hidden",
+              "width": "100%"
+            },
+            ".embla__viewport.is-draggable": {
+              "cursor": "grab"
+            },
+            ".embla__viewport.is-dragging": {
+              "cursor": "grabbing"
+            },
+            ".embla__container": {
+              "display": "flex",
+              "user-select": "none",
+              "-webkit-touch-callout": "none",
+              "-khtml-user-select": "none",
+              "-webkit-tap-highlight-color": "transparent"
+            },
+            ".mbr-section-subtitle": {
+              "margin-bottom": "27px",
+              "letter-spacing": "0.13em",
+              "color": "#FF4712",
+              "text-align": "center"
+            },
+            ".mbr-section-title": {
+              "margin-bottom": "16px",
+              "color": "#d70081",
+              "text-align": "center"
+            },
+            ".mbr-text": {
+              "margin": "0",
+              "ul": {
+                "list-style-position": "inside",
+                "display": "flex",
+                "justify-content": "center",
+                "padding": "0",
+                "@media (max-width: 992px)": {
+                  "display": "block"
+                },
+                "li": {
+                  "padding": "0 3rem",
+                  "@media (max-width: 992px)": {
+                    "margin-top": "10px",
+                    "margin-left": "0"
+                  }
+                },
+                "li::marker": {
+                  "color": "@primaryColor",
+                  "font-size": "18px"
+                }
+              },
+              "color": "#EAEAEA",
+              "text-align": "center"
+            },
+            ".item-wrapper": {
+              "height": "100%",
+              ".image-wrap": {
+                "height": "100%",
+                "img": {
+                  "width": "448px",
+                  "height": "800px",
+                  "object-fit": "cover",
+                  "@media (max-width: 992px)": {
+                    "width": "269px",
+                    "height": "480px"
+                  }
+                }
+              }
+            }
+          },
+          "_cid": "uj64B7xjil",
+          "_anchor": "slider2-1v",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
           "alias": false,
           "_styles": {
             "& when not (@fullScreen)": {
@@ -1144,314 +1432,6 @@
           "_anchor": "article05-a",
           "_PHPplaceholders": [],
           "_JSplaceholders": [],
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)",
-              "& when (@overlay)": {
-                ".mbr-overlay": {
-                  "background": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
-            ".item:focus, span:focus": {
-              "outline": "none"
-            },
-            ".item": {
-              "cursor": "pointer"
-            },
-            "& when not (@spacing)": {
-              ".grid-container": {
-                "grid-row-gap": "0"
-              },
-              ".grid-container-1, .grid-container-2": {
-                "gap": "0"
-              }
-            },
-            "& when (@spacing)": {
-              ".grid-container": {
-                "grid-row-gap": "2rem",
-                "@media (max-width: 767px)": {
-                  "grid-row-gap": "1rem"
-                }
-              },
-              ".grid-container-1, .grid-container-2": {
-                "gap": "0 2rem",
-                "@media (max-width: 767px)": {
-                  "gap": "0 1rem"
-                }
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#d70081"
-            },
-            ".mbr-text, .mbr-section-btn": {
-              "color": "#000000"
-            },
-            ".content-head": {
-              "max-width": "800px"
-            },
-            ".container, .container-fluid": {
-              "overflow": "hidden"
-            },
-            ".grid-container": {
-              "display": "grid",
-              "transform": "translate3d(-2rem, 0, 0)",
-              "width": "115vw",
-              "grid-column-gap": "1rem"
-            },
-            ".grid-item": {
-              "display": "flex",
-              "justify-content": "center",
-              "align-items": "center"
-            },
-            ".grid-item img": {
-              "@media (max-width: 767px)": {
-                "min-width": "25vw"
-              },
-              "min-width": "20vw",
-              "max-width": "100%",
-              "max-height": "100%",
-              "object-fit": "cover"
-            },
-            ".grid-container-1, .grid-container-2": {
-              "display": "grid",
-              "grid-template-columns": "repeat(5, 1fr)",
-              "grid-auto-columns": "1fr",
-              "grid-auto-flow": "column"
-            },
-            ".grid-container-1": {
-              "align-items": "flex-end"
-            },
-            ".grid-container-2": {
-              "align-items": "flex-start"
-            }
-          },
-          "_name": "gallery04",
-          "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery4\" group=\"Gallery\" plugins=\"scrollGallery\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n    \n    <header>Show/Hide</header>\n    <input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n    <input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\" checked>\n    <header>Cards</header>\n    <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n    <header>Background</header>\n    <fieldset type=\"background\" parallax name=\"bg\" required>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n  <div class=\"container-fluid gallery-wrapper\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-head\">\n        <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n          <h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            <b>Inspírate</b></h4>\n          <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            Looks en los que inspirarte</h5>\n        </div>\n      </div>\n    </div>\n    <div class=\"grid-container\">\n      <div class=\"grid-container-1\" style=\"transform: translate3d(-160px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/295dbecc-574a-4bd2-a8ac-b2914e1f714b-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/32382379-206215076660153-6644117164833898496-n-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/44789810-2257246970955023-5587301407388697528-n.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n      <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/60644887-140803083754045-3597518227772889428-n.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/239034401-596678471486775-1616811937096368629-n-1.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n      </div>\n      <div class=\"grid-container-2\" style=\"transform: translate3d(-70px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/64322679-2173970256233427-8630054698621043088-n-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/64674960-710946462670899-4046296227525434399-n-1.jpeg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/106044516-307786750401795-6433061130509474835-n-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/241452351-260354539269440-1038817179603187048-n-1.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/289455060-445685637372384-2870034002350956856-n.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n      </div>\n    </div>\n  </div>\n</section>",
-          "_cid": "uj5vl0WzzY",
-          "_anchor": "gallery04-1k",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": [],
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)",
-              "& when (@overlay)": {
-                ".mbr-overlay": {
-                  "background": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
-            ".item:focus, span:focus": {
-              "outline": "none"
-            },
-            ".item": {
-              "cursor": "pointer"
-            },
-            "& when not (@spacing)": {
-              ".grid-container": {
-                "grid-row-gap": "0"
-              },
-              ".grid-container-1, .grid-container-2": {
-                "gap": "0"
-              }
-            },
-            "& when (@spacing)": {
-              ".grid-container": {
-                "grid-row-gap": "2rem",
-                "@media (max-width: 767px)": {
-                  "grid-row-gap": "1rem"
-                }
-              },
-              ".grid-container-1, .grid-container-2": {
-                "gap": "0 2rem",
-                "@media (max-width: 767px)": {
-                  "gap": "0 1rem"
-                }
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#000000"
-            },
-            ".mbr-text, .mbr-section-btn": {
-              "color": "#000000"
-            },
-            ".content-head": {
-              "max-width": "800px"
-            },
-            ".container, .container-fluid": {
-              "overflow": "hidden"
-            },
-            ".grid-container": {
-              "display": "grid",
-              "transform": "translate3d(-3rem, 0, 0)",
-              "width": "115vw",
-              "grid-column-gap": "1rem"
-            },
-            ".grid-item": {
-              "display": "flex",
-              "justify-content": "center",
-              "align-items": "center"
-            },
-            ".grid-item img": {
-              "@media (max-width: 767px)": {
-                "min-width": "25vw"
-              },
-              "min-width": "20vw",
-              "max-width": "100%",
-              "max-height": "100%",
-              "object-fit": "cover"
-            },
-            ".grid-container-1, .grid-container-2": {
-              "display": "grid",
-              "grid-template-columns": "repeat(4, 1fr)",
-              "grid-auto-columns": "1fr",
-              "grid-auto-flow": "column"
-            },
-            ".grid-container-1": {
-              "align-items": "flex-end"
-            },
-            ".grid-container-2": {
-              "align-items": "flex-start"
-            }
-          },
-          "_name": "gallery04",
-          "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery4\" group=\"Gallery\" plugins=\"scrollGallery\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n    \n    <header>Show/Hide</header>\n    <input type=\"checkbox\" name=\"showTitle\" title=\"Title\">\n    <input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n    <header>Cards</header>\n    <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n    <header>Background</header>\n    <fieldset type=\"background\" parallax name=\"bg\" required>\n      <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n  <div class=\"container-fluid gallery-wrapper\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-head\">\n        <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n          <h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            <b>Gallery with scroll animation</b>\n          </h4>\n          <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            Publish your site or preview it to see how the slider works in action.\n          </h5>\n        </div>\n      </div>\n    </div>\n    <div class=\"grid-container\">\n      <div class=\"grid-container-1\" style=\"transform: translate3d(-160px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/296488145-145189668185045-2788108866557694149-n.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/311592149-3288167718167873-1190342099930982271-n-1.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1525267569-1770395146917483800.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n      <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1533431286-1838877367260706300.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1535727693-1858141026892590300.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n      </div>\n      <div class=\"grid-container-2\" style=\"transform: translate3d(-70px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1557154284-2037880298697346300.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1557750373-2042880657404574700.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1557852473-2043737136773198800.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1560175018-2063220054042054400.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1563281498-2089279097323656200.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n      </div>\n    </div>\n  </div>\n</section>",
-          "_JSplaceholders": [],
-          "_PHPplaceholders": [],
-          "_anchor": "gallery04-1m",
-          "_isUserblock": true,
-          "_cid": "uj5BXMeiaT",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)",
-              "& when (@overlay)": {
-                ".mbr-overlay": {
-                  "background": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
-            ".item:focus, span:focus": {
-              "outline": "none"
-            },
-            ".item": {
-              "cursor": "pointer"
-            },
-            "& when not (@spacing)": {
-              ".grid-container": {
-                "grid-row-gap": "0"
-              },
-              ".grid-container-1, .grid-container-2": {
-                "gap": "0"
-              }
-            },
-            "& when (@spacing)": {
-              ".grid-container": {
-                "grid-row-gap": "2rem",
-                "@media (max-width: 767px)": {
-                  "grid-row-gap": "1rem"
-                }
-              },
-              ".grid-container-1, .grid-container-2": {
-                "gap": "0 2rem",
-                "@media (max-width: 767px)": {
-                  "gap": "0 1rem"
-                }
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#000000"
-            },
-            ".mbr-text, .mbr-section-btn": {
-              "color": "#000000"
-            },
-            ".content-head": {
-              "max-width": "800px"
-            },
-            ".container, .container-fluid": {
-              "overflow": "hidden"
-            },
-            ".grid-container": {
-              "display": "grid",
-              "transform": "translate3d(-3rem, 0, 0)",
-              "width": "115vw",
-              "grid-column-gap": "1rem"
-            },
-            ".grid-item": {
-              "display": "flex",
-              "justify-content": "center",
-              "align-items": "center"
-            },
-            ".grid-item img": {
-              "@media (max-width: 767px)": {
-                "min-width": "25vw"
-              },
-              "min-width": "20vw",
-              "max-width": "100%",
-              "max-height": "100%",
-              "object-fit": "cover"
-            },
-            ".grid-container-1, .grid-container-2": {
-              "display": "grid",
-              "grid-template-columns": "repeat(4, 1fr)",
-              "grid-auto-columns": "1fr",
-              "grid-auto-flow": "column"
-            },
-            ".grid-container-1": {
-              "align-items": "flex-end"
-            },
-            ".grid-container-2": {
-              "align-items": "flex-start"
-            }
-          },
-          "_name": "gallery04",
-          "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery4\" group=\"Gallery\" plugins=\"scrollGallery\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n    \n    <header>Show/Hide</header>\n    <input type=\"checkbox\" name=\"showTitle\" title=\"Title\">\n    <input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n    <header>Cards</header>\n    <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n    <header>Background</header>\n    <fieldset type=\"background\" parallax name=\"bg\" required>\n      <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n  <div class=\"container-fluid gallery-wrapper\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-head\">\n        <div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n          <h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            <b>Gallery with scroll animation</b>\n          </h4>\n          <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            Publish your site or preview it to see how the slider works in action.\n          </h5>\n        </div>\n      </div>\n    </div>\n    <div class=\"grid-container\">\n      <div class=\"grid-container-1\" style=\"transform: translate3d(-160px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1565012631-2103800895176071200.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1565105792-2104582386445194800.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1569264961-2139472024934822400.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n      <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1565162160-2105055232397337600.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1584100431-2263920966137020700.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n      </div>\n      <div class=\"grid-container-2\" style=\"transform: translate3d(-70px, 0px, 0px);\">\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1594055434-2347429586324624000.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1604072348-2431457548312589000.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1604330337-2433621713294841000.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1700070123-3236745253891417600.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n        <div class=\"grid-item\">\n          <img src=\"@PROJECT_PATH@/assets/images/daaniella26-1627909038-2631414193058240000.jpg\" alt=\"Mobirise Website Builder\">\n       </div>\n      </div>\n    </div>\n  </div>\n</section>",
-          "_JSplaceholders": [],
-          "_PHPplaceholders": [],
-          "_anchor": "gallery04-1n",
-          "_isUserblock": true,
-          "_cid": "uj5CXq3mRL",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
