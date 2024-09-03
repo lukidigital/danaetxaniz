@@ -95,17 +95,20 @@
     ],
     "imageResize": false,
     "favicon": "@PROJECT_PATH@/assets/images/screenshot-2024-07-14-at-14.01.15.png",
-    "mbrsiteDomain": "gezdiqlxos",
+    "mbrsiteDomain": "hpfzpnhhrc",
     "usedWebp": false,
-    "robotsSwitcher": false,
+    "robotsSwitcher": true,
     "sitemapSwitcher": false,
     "sitemapSwitcherAuto": false,
     "siteUrl": false,
-    "cookiesAlert": false,
     "gdpr": false,
     "uniqCompNum": 70,
     "versionPublish": "5.9.13",
-    "screenshot": "screenshot.png"
+    "screenshot": "screenshot.png",
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\n",
+    "global_header_custom": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2YQ76W0B95\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-2YQ76W0B95');\n</script>",
+    "site_lang": "es",
+    "cookiesAlert": false
   },
   "pages": {
     "index.html": {
