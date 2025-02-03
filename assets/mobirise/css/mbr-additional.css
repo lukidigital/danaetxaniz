@@ -1421,6 +1421,9 @@ a {
   }
 }
 .cid-uiuemN4rzP .row {
+  flex-direction: row-reverse;
+}
+.cid-uiuemN4rzP .row {
   align-items: center;
 }
 @media (max-width: 991px) {
@@ -1525,7 +1528,7 @@ a {
 .cid-uiv2BkwBx6 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #edefeb;
+  background-color: #f7f7f7;
 }
 .cid-uiv2BkwBx6 .mbr-fallback-image.disabled {
   display: none;
@@ -1633,21 +1636,15 @@ a {
 .cid-uiv2BkwBx6 .mbr-subtitle {
   text-align: center;
 }
-.cid-uiuFnrAC73 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background-color: #f7f7f7;
+.cid-uBKWKD6usU {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  background-image: url("../../../assets/images/still-life-fashion-designer-s-office.jpg");
 }
-.cid-uiuFnrAC73 .mbr-fallback-image.disabled {
+.cid-uBKWKD6usU .mbr-fallback-image.disabled {
   display: none;
 }
-.cid-uiuFnrAC73 .item-wrapper img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50% !important;
-}
-.cid-uiuFnrAC73 .mbr-fallback-image {
+.cid-uBKWKD6usU .mbr-fallback-image {
   display: block;
   background-size: cover;
   background-position: center center;
@@ -1656,35 +1653,189 @@ a {
   position: absolute;
   top: 0;
 }
-.cid-uiuFnrAC73 .item-wrapper {
-  background: #ffffff;
+.cid-uBKWKD6usU .mbr-text {
+  color: #000000;
+}
+.cid-uBKWKD6usU .mbr-section-subtitle {
+  color: #ffffff;
+  text-align: left;
+}
+.cid-uBKWKD6usU .item-mb {
   margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-uBKWKD6usU .item-mb {
+    margin-bottom: 1rem;
+  }
+}
+.cid-uBKWKD6usU .mbr-number {
+  color: #9fe870;
+  text-align: left;
+}
+.cid-uBKWKD6usU .mbr-section-title {
+  color: #ffffff;
+}
+.cid-uBKWKD6usU .item-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.25rem 2.25rem 0;
+  background: #ffffff;
+}
+.cid-uBKWKD6usU .item-content .item-footer {
+  margin-top: auto;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cid-uBKWKD6usU .item-content {
+    padding: 0rem 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-uBKWKD6usU .item-content {
+    padding: 0rem 1.5rem;
+  }
+}
+.cid-uBKWKD6usU .side-features {
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.cid-uBKWKD6usU .side-features .item {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.cid-uBKWKD6usU .item-head {
+  background: #757b62;
   padding: 2.25rem;
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .cid-uiuFnrAC73 .item-wrapper {
+  .cid-uBKWKD6usU .item-head {
     padding: 2rem 1.5rem;
     margin-bottom: 2rem;
   }
 }
 @media (max-width: 767px) {
-  .cid-uiuFnrAC73 .item-wrapper {
+  .cid-uBKWKD6usU .item-head {
     padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+.cid-uBKWKD6usU .item-wrapper {
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 0rem;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media (max-width: 767px) {
+  .cid-uBKWKD6usU .item-wrapper {
     margin-bottom: 1rem;
   }
 }
-.cid-uiuFnrAC73 .card-title,
-.cid-uiuFnrAC73 .iconfont-wrapper {
-  color: #000000;
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cid-uBKWKD6usU .item-wrapper .item-footer {
+    padding: 0 1.5rem 3rem;
+  }
 }
-.cid-uiuFnrAC73 .card-text {
-  color: #000000;
+@media (min-width: 1201px) {
+  .cid-uBKWKD6usU .item-wrapper .item-footer {
+    padding: 0 2rem 3rem;
+  }
 }
-.cid-uiuFnrAC73 .content-head {
+.cid-uBKWKD6usU .mbr-section-btn {
+  margin-top: auto !important;
+  padding: 2rem 2rem 0;
+}
+@media (max-width: 991px) {
+  .cid-uBKWKD6usU .mbr-section-btn {
+    padding: 0rem 2.25rem 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-uBKWKD6usU .mbr-section-btn {
+    padding: 0rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+.cid-uBKWKD6usU .item:focus,
+.cid-uBKWKD6usU span:focus {
+  outline: none;
+}
+.cid-uBKWKD6usU .mbr-text,
+.cid-uBKWKD6usU .mbr-section-btn {
+  text-align: left;
+}
+.cid-uBKWKD6usU .item-title {
+  text-align: left;
+  color: #ffffff;
+}
+.cid-uBKWKD6usU .item-subtitle {
+  text-align: left;
+  color: #ffffff;
+}
+.cid-uBKWKD6usU .content-head {
   max-width: 800px;
 }
-.cid-uiuFnrAC73 .mbr-section-title {
-  color: #d70081;
+.cid-uBKWKD6usU .counter-container ul {
+  margin: 0;
+  padding-left: 2.25rem;
+  list-style: none;
+}
+.cid-uBKWKD6usU .counter-container ul li {
+  position: relative;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.cid-uBKWKD6usU .counter-container ul li:before {
+  position: absolute;
+  left: -1.5em;
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #757b62;
+  background-color: #757b62;
+  width: 0.5em;
+  height: 0.5em;
+  top: 0.4em;
+  border-radius: 50%;
+}
+.cid-uBKWKD6usU .counter-container ul li {
+  margin-bottom: 1rem;
+}
+.cid-uBKWKD6usU .mbr-text UL {
+  text-align: left;
+}
+.cid-uBKWKD6usU .item-btn {
+  width: -webkit-fill-available;
+}
+.cid-uBKWKD6usU .main-button {
+  margin-bottom: 2rem;
+  padding: 0rem 0rem 2rem;
+}
+@media (max-width: 767px) {
+  .cid-uBKWKD6usU .main-button {
+    margin-bottom: 2rem;
+    padding: 0rem 0rem 0.5rem;
+  }
+}
+@media (max-width: 991px) {
+  .cid-uBKWKD6usU .main-button {
+    padding: 0rem 0rem 0.5rem;
+  }
+}
+.cid-uBKWKD6usU .mbr-section-subtitle,
+.cid-uBKWKD6usU .main-button .btn {
+  text-align: left;
+}
+.cid-uBKWKD6usU .mbr-section-subtitle,
+.cid-uBKWKD6usU .main-button {
+  color: #ffffff;
+  text-align: left;
 }
 .cid-uj64B7xjil {
   padding-top: 8rem;
